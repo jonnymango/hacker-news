@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeURL} from '../../utils/functions';
+import {makeURL, getTime} from '../../utils/functions';
 
 const renderURL = (url) => {
     const hostname = makeURL(url);
@@ -8,7 +8,7 @@ const renderURL = (url) => {
 }
 
 export const Story = (props) => {
-    const {by, title, score, descendants, url, id} = props.story;
+    const {by, title, score, descendants, url, id, time} = props.story;
     const itemURL = `https://news.ycombinator.com/item?id=${id}`;
 
     return (
@@ -23,6 +23,9 @@ export const Story = (props) => {
             </div>
             <div>
                 {descendants} comments
+            </div>
+            <div>
+                {getTime(time * 1000)}
             </div>
         </div>
     );

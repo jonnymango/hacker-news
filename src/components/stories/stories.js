@@ -10,7 +10,7 @@ class Stories extends Component {
         page: 1
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({loading: true})
         getStories(1).then(stories => {
             this.setState({loading: false, stories})
@@ -41,7 +41,7 @@ class Stories extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='wrapper'>
                 <div>
                     { (this.state.page > 1) && <button disabled={this.state.loading} onClick={this.prevPage}>Prev</button> }
                     <button disabled={this.state.loading} onClick={this.nextPage}>Next</button>

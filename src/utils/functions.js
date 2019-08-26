@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const getStories = (page) => {
     return fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
     .then(res => res.json())
@@ -18,3 +20,7 @@ export const makeURL = (urlString) => {
         return urlString;
     }
  }
+
+ export const getTime = time => {
+    return moment(time).fromNow();  
+}
