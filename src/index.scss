@@ -1,11 +1,61 @@
+$mainBlue: #097EAC;
+$mainOrange: #C2620D;
+$mainBlack: #221203;
+
 body {
   margin: 0;
   padding: 0;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  
+  color: $mainBlack;
 }
 
 .wrapper{
   width: 800px;
   margin: 0 auto;
+}
+
+.nav{
+  width: 100%;
+  overflow: hidden;
+  padding-top: 10px;
+  &__button{
+    background: $mainOrange;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    &--next{
+      float: right;
+    }
+    &--prev{
+      float: left;
+    }
+  }
+}
+
+.story{
+  padding: 10px;
+  &__title{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+
+    &--source{
+      font-size: 14px;
+      font-weight: normal;
+    }
+    
+    a:link{
+      color: $mainBlue;
+      text-decoration: none;
+    }
+
+    a:hover{
+      color: $mainBlue;
+      text-decoration: underline;
+    }
+  }
+
+  &__info{
+    font-size: 14px;
+  }
 }

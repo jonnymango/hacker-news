@@ -12,21 +12,16 @@ export const Story = (props) => {
     const itemURL = `https://news.ycombinator.com/item?id=${id}`;
 
     return (
-        <div>
+        <section className='story'>
             <div>
-                <a href={itemURL} target='_blank' rel='noopener noreferrer'>{title}</a>
-                <br/>   
-                <span>{ url && renderURL(url) }</span>
+                <h2 className='story__title'><a href={itemURL} target='_blank' rel='noopener noreferrer'>{title}</a> <span className='story__title--source'>{ url && renderURL(url) }</span></h2>
             </div>
-            <div>
-                <span>{score}</span> points by {by}. 
+            <div className='story__info'>
+                <strong>{score}</strong> points by <strong>{by}</strong>. <br/>
+                <strong>{descendants}</strong> comments <br/>
+                <em>{getTime(time * 1000)}</em>
             </div>
-            <div>
-                {descendants} comments
-            </div>
-            <div>
-                {getTime(time * 1000)}
-            </div>
-        </div>
+            
+        </section>
     );
 }

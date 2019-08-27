@@ -42,10 +42,10 @@ class Stories extends Component {
     render() {
         return (
             <div className='wrapper'>
-                <div>
-                    { (this.state.page > 1) && <button disabled={this.state.loading} onClick={this.prevPage}>Prev</button> }
-                    <button disabled={this.state.loading} onClick={this.nextPage}>Next</button>
-                </div>
+                <nav className='nav'>
+                    { (this.state.page > 1) && <button className='nav__button nav__button--prev' disabled={this.state.loading} onClick={this.prevPage}>Prev</button> }
+                    <button className='nav__button nav__button--next' disabled={this.state.loading} onClick={this.nextPage}>Next</button>
+                </nav>
                 {
                     this.state.loading ?
                         <p>Loading...</p>
